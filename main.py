@@ -11,6 +11,8 @@ TEXT = (
 
 
 def main():
+    if not 1 <= len(TEXT) <= 200:
+        raise ValueError("entry text must be 1 to 200 characters")
     output_dir = os.environ.get("MAKEFUN_OUTPUT_DIR", "/output")
     os.makedirs(output_dir, exist_ok=True)
     path = os.path.join(output_dir, "entry.txt")
